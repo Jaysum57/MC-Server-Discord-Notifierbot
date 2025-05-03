@@ -5,12 +5,12 @@ import requests
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+load_dotenv(override=True)
 
 TOKEN = os.getenv("TOKEN")
-CHANNEL_ID = os.getenv("CHANNEL_ID")
+CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
 SERVER_IP = os.getenv("SERVER_IP")
-SERVER_PORT = os.getenv("SERVER_PORT")
+SERVER_PORT = int(os.getenv("SERVER_PORT"))
 
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
