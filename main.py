@@ -2,10 +2,15 @@ import discord
 import asyncio
 import requests
 
-TOKEN = 'MTM2ODEwMTI1ODg3NTExMzUxMw.GJ5Kmy.ZN6at67AJ8y48nykdDdBByPcXW9x--Bj7q8zG8'  # Replace with your bot token
-CHANNEL_ID = 1305551392508743811  # Replace with your channel ID
-SERVER_IP = 'MCNerds-tZz7.aternos.me'
-SERVER_PORT = 35311
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+TOKEN = os.getenv("TOKEN")
+CHANNEL_ID = os.getenv("CHANNEL_ID")
+SERVER_IP = os.getenv("SERVER_IP")
+SERVER_PORT = os.getenv("SERVER_PORT")
 
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
